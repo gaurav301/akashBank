@@ -1,0 +1,115 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.title-bar {
+    width: 100%;
+    background-color: black;
+    height: 160px;
+    vertical-align: middle;
+    top: 0px;
+    position: sticky;
+    z-index: 2;
+}
+
+.logo {
+    top: 40px;
+    left: 70px;
+    position: absolute;
+}
+
+.heading {
+    font-family: cursive;
+    color: white;
+    text-align: center;
+    top: 30px;
+    left: 500px;
+    position: absolute;
+}
+
+.logo-2 {
+    top: 40px;
+    right: 70px;
+    position: absolute;
+}
+
+.left-side-bar {
+    top: 160px;
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.right-side-bar {
+    top: 160px;
+    width: 200px;
+    height: 100%;
+    right: 0px;
+    position: absolute;
+    z-index: 1;
+}
+
+.main-content {
+    position: absolute;
+    top: 160px;
+    left: 190px;
+    width: 900px;
+    height: 600px;
+    text-align: center;
+}
+
+.content-text {
+    position: relative;
+    top: 30px;
+    left: 0px;
+}
+
+.content-text p {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    top: 220px;
+}
+
+.table {
+    position: absolute;
+    left: 350px;
+    top: 270px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table th {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.table th, .table td {
+    padding: 10px 15px;
+}
+
+.table tr {
+    border-bottom: 1px solid #000000;
+    background-color: lightskyblue;
+    color: black;
+}
+
+.table tr:hover {
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border: 3px solid #000000;
+}
+
+td a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,88 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            Select Amount - Akash Bank
+        </title>
+        <link rel="stylesheet"  href="{%  static  'css/transferstyles.css'  %}">
+        <!--
+        <script>
+            function validate_payment() {
+                var transfer_amount=document.forms["transferform"]["amount"];
+                if (transfer_amount.value == '') {
+                    window.alert('Please enter the amount to be transferred');
+                    transfer_amount.focus();
+                    return false;
+                }
+            }
+        </script>
+    -->
+    </head>
+    <body>
+        <div class='title-bar'>
+            <div class='logo'>
+                <img src="{% static 'main/images/logo.jpg' %}" width = "80" height = "80">
+            </div>
+            <h1 class='heading'>
+                TRANSFER MONEY NOW!
+            </h1>
+            <div class='logo-2'>
+                <img src="{% static 'main/images/logo2.png' %}" width = "80" height = "80">
+            </div>
+        </div>
+        <div class='left-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='right-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='main-content' style="background-image: url('{% static "main/images/transferimg.jpg"%}')">
+            <div class='content-text'>
+                <p>
+                    SENDER DETAILS
+                </p>
+            </div>
+            <div class='sender-details'>
+                <br>
+                <p>
+                    CUSTOMER ID: {{sender.cust_id}}
+                </p>
+                <p>
+                    CUSTOMER NAME: {{sender.cust_name}}
+                </p>
+                <p>
+                    EMAIL: {{sender.cust_email}}
+                </p>
+                <p>
+                    CURRENT ACCOUNT BALANCE: {{sender.curr_balance}}
+                </p>
+            </div>
+            <form method="post" name='transferform' action="#" class='bank-form'>
+                    {% csrf_token %}
+                    <p class="form-content">
+                        Enter the Transfer Amount <br><br>Rs.
+                        <input type="number" name="amount" min="0" max="{{sender.curr_balance}}" required="required">
+                    </p>
+                    <br>
+                    <button type="submit" name="transfer" value="submit">
+                        Proceed
+                    </button>
+            </form>
+        </div>
+        <!--
+        <p>
+            {{sender.cust_id}}
+        </p>
+        <p>
+            {{sender.cust_name}}
+        </p>
+        <p>
+            {{sender.cust_email}}
+        </p>
+        <p>
+            {{sender.curr_balance}}
+        </p>
+    -->
+    </body>
+</html>

@@ -1,0 +1,81 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            Confirm Payment - Akash Bank
+        </title>
+        <link rel="stylesheet"  href="{%  static  'css/confirmstyles.css'  %}">
+    </head>
+    <script type = "text/javascript" >  
+        function preventBack() { window.history.forward(); }  
+        setTimeout("preventBack()", 0);  
+        window.onunload = function () { null };  
+    </script> 
+    <body>
+        <div class='title-bar'>
+            <div class='logo'>
+                <img src="{% static 'main/images/logo.jpg' %}" width = "80" height = "80">
+            </div>
+            <h1 class='heading'>
+                CONFIRMATION PAGE
+            </h1>
+            <div class='logo-2'>
+                <img src="{% static 'main/images/logo2.png' %}" width = "80" height = "80">
+            </div>
+        </div>
+        <div class='left-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='right-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='main-content' style="background-image: url('{% static "main/images/confirmimg.jpg"%}')">
+            <div class='content-text'>
+                <p>
+                    TRANSACTION DETAILS
+                </p>
+            </div>
+            <div class='transaction-details'>
+                <br>
+                <h2>
+                    SENDER DETAILS
+                </h2>
+                <p>
+                    CUSTOMER ID: {{sender.cust_id}}
+                </p>
+                <p>
+                    CUSTOMER NAME: {{sender.cust_name}}
+                </p>
+                <p>
+                    EMAIL: {{sender.cust_email}}
+                </p>
+                <p>
+                    CURRENT ACCOUNT BALANCE: {{sender.curr_balance}}
+                </p>
+                <br>
+                <h2>
+                    RECEIVER DETAILS
+                </h2>
+                <p>
+                    CUSTOMER ID: {{receiver.cust_id}}
+                </p>
+                <p>
+                    CUSTOMER NAME: {{receiver.cust_name}}
+                </p>
+                <p>
+                    EMAIL: {{receiver.cust_email}}
+                </p>
+                <p>
+                    CURRENT ACCOUNT BALANCE: {{receiver.curr_balance}}
+                </p>
+            </div>
+            <form method="post" name="confirm" action="#" class="confirm-form">
+                {% csrf_token %}
+                <button type="submit" name="confirm" value="submit">
+                    Make Payment
+                </button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            {{cust_name}} - Akash Bank
+        </title>
+        <link rel="stylesheet"  href="{%  static  'css/historystyles.css'  %}">
+    </head>
+    <body style="background-image: url('{% static "main/images/historyimg.jpg"%}')">
+        <div class='main-title'>
+            <h1>
+                TRANSACTION HISTORY
+            </h1>
+        </div>
+        <div class='title-credits'>
+            <h3>
+                CREDITS
+            </h3>
+        </div>
+        <div class='title-debits'>
+            <h3>
+                DEBITS
+            </h3>
+        </div>
+        <table class="credits-table">
+            <th>
+                Receiver ID
+            </th>
+            <th>
+                Receiver Name
+            </th>
+            <th>
+                Date and Time of transfer
+            </th>
+            <th>
+                Transfer Amount
+            </th>
+            {% for item in credits %}
+                <tr class='credit-row'>
+                    <td>
+                        {{item.receiver_id.cust_id}}
+                    </td>
+                    <td>
+                        {{item.receiver_name}}
+                    </td>
+                    <td>
+                        {{item.date_of_transfer}}
+                    </td>
+                    <td>
+                        {{item.amount}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <table class="debits-table">
+            <th>
+                Sender ID
+            </th>
+            <th>
+                Sender Name
+            </th>
+            <th>
+                Date and Time of transfer
+            </th>
+            <th>
+                Transfer Amount
+            </th>
+            {% for item in debits %}
+                <tr class='debit-row'>
+                    <td>
+                        {{item.sender_id.cust_id}}
+                    </td>
+                    <td>
+                        {{item.sender_name}}
+                    </td>
+                    <td>
+                        {{item.date_of_transfer}}
+                    </td>
+                    <td>
+                        {{item.amount}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+        <!--
+        {% for item in credits %}
+            <p>
+                {{item.receiver_name}}
+            </p>
+        {% endfor %}
+        -->
+    </body>
+</html>

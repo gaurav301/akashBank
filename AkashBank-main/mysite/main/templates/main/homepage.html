@@ -1,0 +1,44 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            Akash Bank
+        </title>
+        <link rel="stylesheet"  href="{%  static  'css/homestyles.css'  %}">
+    </head>
+    <body>
+        <div class='title-bar'>
+            <div class='logo'>
+                <img src="{% static 'main/images/logo.jpg' %}" width = "80" height = "80">
+            </div>
+            <h1 class='heading'>
+                WELCOME TO AKASH BANK
+            </h1>
+            <div class='logo-2'>
+                <img src="{% static 'main/images/logo2.png' %}" width = "80" height = "80">
+            </div>
+        </div>
+        <div class='left-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='right-side-bar'>
+            <img src="{% static 'main/images/curtain.jpg' %}" width = "200" height = "100%">
+        </div>
+        <div class='main-content' style="background-image: url('{% static "main/images/contentimg.jpg"%}')">
+            <div class='content-text'>
+                <a href="/sendlist">
+                    CLICK HERE TO VIEW THE LIST OF CUSTOMERS
+                </a>
+            </div>
+        </div>
+        <div class='contact-info'>
+            <p>
+                Email: akashskyash007@gmail.com
+            </p>
+            <p>
+                Phone: 9108737145
+            </p>
+        </div>
+    </body>
+</html>
